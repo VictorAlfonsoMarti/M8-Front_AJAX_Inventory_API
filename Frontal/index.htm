@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="js/codigo.js"></script>
+        <script src="ajax/ajax_get.js"></script>
+        <!-- Librerías Bootsrap -->
+            <!-- CSS only -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+            <!-- JavaScript Bundle with Popper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <!-- Librerías JQUERY -->
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th><h1>Inventory</h1></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="input-group mb-3 divBlue">
+                                        <button type="button" id="botonGetAll" class="btn botonBlue">
+                                            GET
+                                        </button>
+                                        <input type="text" id="textGetAll" disabled class="texto inputBlue" placeholder="/api/Products" aria-label="" aria-describedby="button-addon2">
+                                        <input type="text" disabled id="inputGetAll" class="form-control inputBlue" placeholder="" aria-label="" aria-describedby="button-addon2">
+                                    </div>
+                                </td>                            
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="input-group mb-3 divGreen">
+                                        <button type="button" id="botonPostID" class="btn botonGreen">
+                                            POST
+                                        </button>
+                                        <input type="text" id="textPostID" disabled class="texto inputGreen" placeholder="/api/Products" aria-label="" aria-describedby="button-addon2">
+                                        <input type="text" id="namePostID" class="form-control inputGreen" placeholder="{name}" aria-label="" aria-describedby="button-addon2">
+                                        <input type="text" id="categoryPostID" class="form-control inputGreen" placeholder="{category}" aria-label="" aria-describedby="button-addon2">
+                                        <input type="text" id="colorPostID" class="form-control inputGreen" placeholder="{color}" aria-label="" aria-describedby="button-addon2">
+                                        <input type="text" id="unitPostID" class="form-control inputGreen" placeholder="{unitPrice}" aria-label="" aria-describedby="button-addon2">
+                                        <input type="text" id="quantityPostID" class="form-control inputGreen" placeholder="{availabelQuantity}" aria-label="" aria-describedby="button-addon2">
+                                    </div>
+                                </td>
+                                <td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="input-group mb-3 divBlue">
+                                        <button type="button" id="botonGetID" class="btn botonBlue">
+                                            GET
+                                        </button>
+                                        <input type="text" id="textGetID" disabled class="texto inputBlue" placeholder="/api/Products/" aria-label="" aria-describedby="button-addon2">
+                                        <input type="text" id="inputGetID" class="form-control inputBlue" placeholder="{id}" aria-label="" aria-describedby="button-addon2">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="input-group mb-3 divOrange">
+                                        <button type="button" id="botonPutID" class="btn botonOrange">
+                                            PUT
+                                        </button>
+                                        <input type="text" id="textPutID" disabled class="texto inputOrange" placeholder="/api/Products/" aria-label="" aria-describedby="button-addon2">
+                                        <input type="text" id="idPutID" class="form-control inputOrange" placeholder="{id}" aria-label="" aria-describedby="button-addon2">
+                                        <input type="text" id="namePutID" class="form-control inputOrange" placeholder="{name}" aria-label="" aria-describedby="button-addon2">
+                                        <input type="text" id="categoryPutID" class="form-control inputOrange" placeholder="{category}" aria-label="" aria-describedby="button-addon2">
+                                        <input type="text" id="colorPutID" class="form-control inputOrange" placeholder="{color}" aria-label="" aria-describedby="button-addon2">
+                                        <input type="text" id="unitPutID" class="form-control inputOrange" placeholder="{unitPrice}" aria-label="" aria-describedby="button-addon2">
+                                        <input type="text" id="quantityPutID" class="form-control inputOrange" placeholder="{availabelQuantity}" aria-label="" aria-describedby="button-addon2">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="input-group mb-3 divRed">
+                                        <button type="button" id="botonDeleteID" class="btn botonRed">
+                                            DELETE
+                                        </button>
+                                        <input type="text" id="textDeleteID" disabled class="texto inputRed" placeholder="/api/Products/" aria-label="" aria-describedby="button-addon2">
+                                        <input type="text" id="inputDeleteID" class="form-control inputRed" placeholder="{id}" aria-label="" aria-describedby="button-addon2">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="input-group mb-3 divBlue">
+                                        <button type="button" id="botonGetAllStock" class="btn botonBlue">
+                                            GET
+                                        </button>
+                                        <input type="text" disabled id="textGetAllStock" class="textoStock inputBlue" placeholder="/api/Products/Stock" aria-label="" aria-describedby="button-addon2">
+                                        <input type="text" disabled id="inputGetAllStock" class="form-control inputBlue" placeholder="" aria-label="" aria-describedby="button-addon2">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-2"></div>
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th><h1>Token</h1></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div id="user" class="input-group mb-3 divGreen">
+                                        <button type="button" id="botonPostToken" class="btn botonGreen">
+                                            POST
+                                        </button>
+                                        <input type="text" id="textPostToken" disabled class="texto inputGreen" placeholder="/api/Token/" aria-label="" aria-describedby="button-addon2">
+                                        <input value="InventoryAdmin@abc.com" type="text" id="inputPostTokenEmail" class="form-control inputGreen" placeholder="{email}" aria-label="" aria-describedby="button-addon2">
+                                        <input value="$admin@2017" type="text" id="inputPostTokenPassword" class="form-control inputGreen" placeholder="{password}" aria-label="" aria-describedby="button-addon2">
+                                    </div>
+                                </td>
+                                <td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-2"></div>
+                <div id="contenido" class="col-8">
+                        <!-- DIV PARA EL JSON DE LA CONSILTA-->    
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </body>
+</html>
